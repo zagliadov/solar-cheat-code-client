@@ -1,0 +1,265 @@
+openapi: 3.0.0
+paths:
+  /:
+    get:
+      operationId: AppController_getHello
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HelloWorldDto'
+  /auth/sign-up:
+    post:
+      operationId: AuthController_signUp
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SignUpBodyDto'
+      responses:
+        '201':
+          description: ''
+  /auth/sign-in:
+    post:
+      operationId: AuthController_signIn
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SignInBodyDto'
+      responses:
+        '200':
+          description: ''
+  /auth/sign-out:
+    post:
+      operationId: AuthController_signOut
+      parameters: []
+      responses:
+        '200':
+          description: ''
+  /auth/session:
+    get:
+      operationId: AuthController_getSessionInfo
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetSessionInfoDto'
+  /account:
+    get:
+      operationId: AccountController_getAccount
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountDto'
+    patch:
+      operationId: AccountController_patchAccount
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchAccountDto'
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountDto'
+  /subscriptions:
+    get:
+      operationId: SubscriptionController_getSubscription
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubscriptionDto'
+  /subscriptions/update:
+    patch:
+      operationId: SubscriptionController_patchSubscription
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchSubscriptionDto'
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PatchSubscriptionDto'
+  /subscriptions/cancel:
+    patch:
+      operationId: SubscriptionController_cancelSubscription
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PatchSubscriptionDto'
+info:
+  title: Solar Cheat Code
+  description: ''
+  version: 1.0.0
+  contact: {}
+tags: []
+servers: []
+components:
+  schemas:
+    HelloWorldDto:
+      type: object
+      properties:
+        message:
+          type: string
+      required:
+        - message
+    SignUpBodyDto:
+      type: object
+      properties:
+        firstName:
+          type: string
+          example: John
+        lastName:
+          type: string
+          example: Doe
+        email:
+          type: string
+          example: test@gmail.com
+        password:
+          type: string
+          example: test
+      required:
+        - firstName
+        - lastName
+        - email
+        - password
+    SignInBodyDto:
+      type: object
+      properties:
+        email:
+          type: string
+          example: test@gmail.com
+        password:
+          type: string
+          example: test
+      required:
+        - email
+        - password
+    GetSessionInfoDto:
+      type: object
+      properties:
+        id:
+          type: string
+        email:
+          type: string
+        iat:
+          type: number
+        exp:
+          type: number
+      required:
+        - id
+        - email
+        - iat
+        - exp
+    AccountDto:
+      type: object
+      properties:
+        id:
+          type: string
+        ownerId:
+          type: string
+        isBlockingEnabled:
+          type: boolean
+      required:
+        - id
+        - ownerId
+        - isBlockingEnabled
+    PatchAccountDto:
+      type: object
+      properties:
+        isBlockingEnabled:
+          type: boolean
+      required:
+        - isBlockingEnabled
+    SubscriptionDto:
+      type: object
+      properties:
+        id:
+          type: string
+        userId:
+          type: string
+        type:
+          type: string
+        price:
+          type: string
+        startDate:
+          format: date-time
+          type: string
+        endDate:
+          format: date-time
+          type: string
+        isActive:
+          type: boolean
+      required:
+        - id
+        - userId
+        - type
+        - price
+        - startDate
+        - endDate
+        - isActive
+    PatchSubscriptionDto:
+      type: object
+      properties:
+        type:
+          type: string
+          example: Premium
+          description: The type of subscription (optional)
+        price:
+          type: string
+          example: 15
+          description: The price of the subscription (optional)
+        startDate:
+          format: date-time
+          type: string
+          example: '2023-01-01T00:00:00.000Z'
+          description: The start date of the subscription (optional)
+        endDate:
+          format: date-time
+          type: string
+          example: '2023-12-31T23:59:59.000Z'
+          description: The end date of the subscription (optional)
+        isActive:
+          type: boolean
+          example: true
+          description: Whether the subscription is active or not (optional)
+      required:
+        - type
+        - price
+        - startDate
+        - endDate
+        - isActive
