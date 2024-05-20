@@ -26,6 +26,7 @@ export { default as Search } from "./Search";
 export { UiMenu } from "./UiMenu";
 export { UiClose } from "./UiClose";
 export { UiSpinner } from "./UiSpinner";
+export { UiSearch } from "./UiSearch";
 export { RedTrash } from "./RedTrash";
 export {
   GreenPlay,

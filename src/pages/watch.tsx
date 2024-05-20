@@ -1,9 +1,14 @@
+import { Navbar, Sidebar } from "@/features/watch";
 import { UiHomeLayout } from "@/shared/ui/Layouts/UiHomeLayout";
 
 export function Watch() {
   return (
-    <UiHomeLayout>
-      <span>Watch Video Page</span>
+    <>
+    <Navbar />
+      <UiHomeLayout className="bg-white">
+        <Sidebar />
+        
       </UiHomeLayout>
-  )
+    </>
+  );
 }

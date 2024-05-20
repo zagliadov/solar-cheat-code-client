@@ -27,7 +27,7 @@ export const MobileMenu: FC = () => {
     <div className="laptop:hidden">
       <UiButton
         variant="outlined"
-        className="focus:outline-none hover:bg-primary-900 border-none"
+        className="focus:outline-none border-none"
         onClick={() => setIsOpen(!isOpen)}
       >
         <UiMenu className="h-8 w-8 stroke-gray-400" aria-hidden="true" />
@@ -41,7 +41,7 @@ export const MobileMenu: FC = () => {
         >
           <UiButton
             variant="outlined"
-            className="absolute top-9 right-4 inline-flex items-center justify-center border-none hover:bg-primary-900 focus:outline-none"
+            className="absolute top-9 right-4 inline-flex items-center justify-center border-none focus:outline-none"
             onClick={() => setIsOpen(false)}
           >
             <UiClose className="h-8 w-8 stroke-gray-400" aria-hidden="true" />

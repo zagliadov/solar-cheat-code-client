@@ -1,4 +1,7 @@
-import { SubscriptionCard, SubscriptionDuration } from "@/features/subscription";
+import {
+  SubscriptionCard,
+  SubscriptionDuration,
+} from "@/features/subscription";
 import {
   monthlySubscriptions,
   yearlySubscriptions,
@@ -8,6 +11,9 @@ import { UiHomeLayout } from "@/shared/ui/Layouts/UiHomeLayout";
 import { UiHeader } from "@/shared/ui/UiHeader/UiHeader";
 import { useState } from "react";
 import _ from "lodash";
+import { UiLogo } from "@/shared/ui/UiLogo/UiLogo";
+import { DesktopNavigation } from "@/shared/ui/UiHeader/DesktopNavigation";
+import { MobileMenu } from "@/shared/ui/UiHeader/MobileMenu";
 
 export function Pricing() {
   const [selectedDuration, setSelectedDuration] = useState<
@@ -23,10 +29,14 @@ export function Pricing() {
 
   return (
     <>
-      <UiHeader />
-      <UiHomeLayout className="items-center justify-center">
+      <UiHeader className=" border-slate-100">
+        <UiLogo />
+        <DesktopNavigation />
+        <MobileMenu />
+      </UiHeader>
+      <UiHomeLayout className="items-center justify-center ">
         <div className="flex flex-col items-center justify-center p-4">
-          <div className="flex flex-col items-center text-white">
+          <div className="flex flex-col items-center">
             <h2 className="text-4xl laptop:text-6xl font-semibold pb-10 uppercase">
               Pricing plans
             </h2>
@@ -39,7 +49,7 @@ export function Pricing() {
             selectedDuration={selectedDuration}
             onChangeDuration={handleChangeDuration}
           />
-          <div className="flex flex-wrap text-primary-50 items-center justify-center w-9/12 gap-4 pt-10">
+          <div className="flex flex-wrap items-center justify-center w-9/12 gap-4 pt-10">
             {_.map(subscriptions, (plan, index) => (
               <SubscriptionCard
                 key={index}

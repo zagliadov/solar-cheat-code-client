@@ -16,7 +16,7 @@ export function protectedWatchPage<P>(Component: (props: P) => ReactElement) {
       return <UiPageSpinner />;
     }
 
-    if (isActive) {
+    if (isActive || isReady) {
       return <Component {...props} />;
     } else {
       router.replace(ROUTES.HOME);

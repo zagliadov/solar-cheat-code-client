@@ -1,16 +1,21 @@
-import { FC } from "react";
-import { UiLogo } from "../UiLogo/UiLogo";
-import { DesktopNavigation } from "./DesktopNavigation";
-import { MobileMenu } from "./MobileMenu";
+import clsx from "clsx";
+import { FC, ReactNode } from "react";
 
-export const UiHeader: FC = () => {
+interface IUiHeaderProps {
+  children: ReactNode;
+  className: string;
+}
+export const UiHeader: FC<IUiHeaderProps> = ({ children, className }) => {
   return (
-    <header className="flex laptop:justify-center border-b border-slate-100 py-8 bg-primary-900">
+    <header
+      className={clsx(
+        className,
+        "flex laptop:justify-center border-b py-8",
+      )}
+    >
       <nav className="flex laptop:justify-between justify-center w-full laptop:w-10/12 items-center">
         <div className="flex items-center w-11/12 justify-between laptop:w-full">
-          <UiLogo />
-          <DesktopNavigation />
-          <MobileMenu />
+          {children}
         </div>
       </nav>
     </header>

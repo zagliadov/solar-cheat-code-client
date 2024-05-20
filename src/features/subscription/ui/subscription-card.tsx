@@ -37,7 +37,7 @@ export const SubscriptionCard: FC<SubscriptionCardProps> = ({
     }
   };
   return (
-    <div className="bg-primary-600 flex-grow min-w-[250px] max-w-[300px] p-4 rounded-md">
+    <div className="bg-gray-300 flex-grow min-w-[250px] max-w-[300px] p-4 rounded-md">
       <span className="uppercase text-xl">{title}</span>
       <ul className="text-sm list-disc list-inside pt-2 space-y-2">
         {description.map((desc, idx) => (
@@ -51,7 +51,7 @@ export const SubscriptionCard: FC<SubscriptionCardProps> = ({
       <div className="pt-4">
         <UiButton
           onClick={handleSubscribe}
-          variant="secondary"
+          variant="primary"
           className="w-full text-primary-800 uppercase font-bold"
         >
           {/* <UiLink href={constants.paymentLinks.preOrder15}>Subscribe</UiLink> */}

@@ -21,9 +21,9 @@ export const UiButton: FC<UiButtonProps> = ({
           primary:
             "text-white bg-primary-600 hover:bg-primary-700 disabled:opacity-50 shadow shadow-primary-500/30",
           secondary:
-            "text-white bg-primary-200 hover:bg-primary-100 disabled:opacity-50 shadow shadow-primary-500/30",
+            "text-white bg-primary-500 hover:bg-primary-700 disabled:opacity-50 shadow shadow-primary-500/30",
           outlined:
-            "border border-primary-300 hover:bg-primary-500 disabled:opacity-50",
+            "border border-primary-600 hover:bg-primary-700 disabled:opacity-50",
         }[variant],
       )}
     />

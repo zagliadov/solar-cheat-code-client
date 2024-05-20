@@ -1,5 +1,5 @@
 export const constants = {
-  url: process.env.NODE_ENV === "development" ? "http://localhost:3001" : "",
+  url: process.env.NODE_ENV === "development" ? "http://localhost:3000" : "",
   paymentLinks: {
     preOrder15:
       process.env.NODE_ENV === "development"

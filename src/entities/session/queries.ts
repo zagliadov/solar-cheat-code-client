@@ -9,8 +9,6 @@ export function useSessionQuery() {
   return useQuery({
     queryKey: sessionKey,
     queryFn: authControllerGetSessionInfo,
-    retry: 0,
-    staleTime: 5 * 60 * 1000,
   });
 }
 

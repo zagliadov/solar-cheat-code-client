@@ -15,7 +15,7 @@ export const UiHomeLayout: FC<UiHomeLayoutProps> = ({
     <main
       className={clsx(
         className,
-        `min-h-screen grow flex flex-col antialiased bg-primary-900 ${openSans.className}`,
+        `min-h-screen grow flex flex-col antialiased ${openSans.className}`,
       )}
     >
       {children}
