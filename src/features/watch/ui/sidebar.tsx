@@ -79,9 +79,9 @@ export const Sidebar: FC<ISidebarProps> = ({
   return (
     <>
       <div
-        className={`bottom-0 top-[105px] border-0 border-r hidden laptop:fixed laptop:z-40 laptop:flex laptop:flex-col ${closeSidebar ? "laptop:w-20" : "laptop:w-56"}`}
+        className={`bottom-0 top-[105px] border-0 border-r  hidden laptop:fixed laptop:z-40 laptop:flex laptop:flex-col ${closeSidebar ? "laptop:w-20" : "laptop:w-56"}`}
       >
-        <div className="flex grow flex-col gap-y-5 overflow-y-auto border border-gray-200 bg-white px-6 pb-4">
+        <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-primary-900 px-6 pb-4 ">
           <nav className="flex flex-1 flex-col pt-8">
             <ul role="list" className="flex flex-1 flex-col gap-y-7">
               <li>
@@ -91,7 +91,7 @@ export const Sidebar: FC<ISidebarProps> = ({
                       <li key={item.name}>
                         <Link
                           href={String(item.path)}
-                          className={`${item.current ? "bg-gray-50 text-teal-600" : "text-gray-700 hover:bg-gray-50 hover:text-teal-600"}
+                          className={`${item.current ? "bg-primary-300 text-teal-600" : "text-gray-700 hover:bg-primary-300 hover:text-teal-600"}
                           group flex items-center gap-x-3 rounded-md p-2 text-sm font-semibold leading-6`}
                         >
                           {item.current
@@ -109,20 +109,29 @@ export const Sidebar: FC<ISidebarProps> = ({
                 </ul>
               </li>
               <li className="mt-auto">
-                <Link href="/settings" className="group -mx-2 flex items-center gap-x-3 rounded-md font-semibold text-sm p-2 leading-6 text-gray-700 hover:bg-gray-50 hover:text-primary-600">
-                  <Settings className={"h-5 w-5 shrink stroke-gray-500 group-hover:stroke-primary-600"} />
-                  <p className={`${closeSidebar ? "hidden" : ""}`}>
-                    Settings
-                  </p>
+                <Link
+                  href="/settings"
+                  className="group -mx-2 flex items-center gap-x-3 rounded-md font-semibold text-sm p-2 leading-6 text-gray-700 hover:bg-primary-300 hover:text-primary-600"
+                >
+                  <Settings
+                    className={
+                      "h-5 w-5 shrink stroke-gray-500 group-hover:stroke-primary-600"
+                    }
+                  />
+                  <p className={`${closeSidebar ? "hidden" : ""}`}>Settings</p>
                 </Link>
-                <Link href="/help" className="group -mx-2 flex items-center gap-x-3 rounded-md font-semibold text-sm p-2 leading-6 text-gray-700 hover:bg-gray-50 hover:text-primary-600">
-                  <HelpCircle className={"h-5 w-5 shrink stroke-gray-500 group-hover:stroke-primary-600"} />
-                  <p className={`${closeSidebar ? "hidden" : ""}`}>
-                    Help
-                  </p>
+                <Link
+                  href="/help"
+                  className="group -mx-2 flex items-center gap-x-3 rounded-md font-semibold text-sm p-2 leading-6 text-gray-700 hover:bg-primary-300 hover:text-primary-600"
+                >
+                  <HelpCircle
+                    className={
+                      "h-5 w-5 shrink stroke-gray-500 group-hover:stroke-primary-600"
+                    }
+                  />
+                  <p className={`${closeSidebar ? "hidden" : ""}`}>Help</p>
                 </Link>
               </li>
-              
             </ul>
           </nav>
         </div>

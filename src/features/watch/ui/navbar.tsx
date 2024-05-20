@@ -38,8 +38,8 @@ export const Navbar: FC<INavbarProps> = ({ children }) => {
   };
   return (
     <>
-      <UiHeader className="bg-white fixed top-0 w-full border-b-gray-200">
-        <UiLink href="/#" aria-label="Home">
+      <UiHeader className="bg-primary-900 fixed top-0 w-full border-b-gray-200">
+        <UiLink href="/" aria-label="Home">
           <UiLogo />
         </UiLink>
         <div className="w-full hidden laptop:flex laptop:items-center laptop:justify-center laptop:px-0">

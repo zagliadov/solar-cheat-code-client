@@ -29,14 +29,14 @@ export function Pricing() {
 
   return (
     <>
-      <UiHeader className=" border-slate-100">
+      <UiHeader className=" border-slate-100 bg-primary-900 text-white">
         <UiLogo />
         <DesktopNavigation />
         <MobileMenu />
       </UiHeader>
-      <UiHomeLayout className="items-center justify-center ">
+      <UiHomeLayout className="items-center justify-center bg-primary-900">
         <div className="flex flex-col items-center justify-center p-4">
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center text-white">
             <h2 className="text-4xl laptop:text-6xl font-semibold pb-10 uppercase">
               Pricing plans
             </h2>

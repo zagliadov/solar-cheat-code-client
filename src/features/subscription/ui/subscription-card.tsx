@@ -37,7 +37,7 @@ export const SubscriptionCard: FC<SubscriptionCardProps> = ({
     }
   };
   return (
-    <div className="bg-gray-300 flex-grow min-w-[250px] max-w-[300px] p-4 rounded-md">
+    <div className="bg-primary-300 flex-grow min-w-[250px] max-w-[300px] p-4 rounded-md">
       <span className="uppercase text-xl">{title}</span>
       <ul className="text-sm list-disc list-inside pt-2 space-y-2">
         {description.map((desc, idx) => (

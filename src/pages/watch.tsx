@@ -5,7 +5,7 @@ export function Watch() {
   return (
     <>
     <Navbar />
-      <UiHomeLayout className="bg-white">
+      <UiHomeLayout className="bg-primary-900">
         <Sidebar />
         
       </UiHomeLayout>
