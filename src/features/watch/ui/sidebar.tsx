@@ -46,15 +46,16 @@ export const Sidebar: FC<ISidebarProps> = ({
     },
     {
       name: "Liked Videos",
-      path: `/playlist/liked-videos/${session?.id}`,
+      path: `/playlist/liked-videos`,
       icon: (className) => <ThumbsUp className={className} />,
-      current: router.pathname === `/playlist/liked-videos/${session?.id}`,
+      current:
+        router.pathname === `/playlist/liked-videos`,
     },
     {
       name: "History",
-      path: `/playlist/history/${session?.id}`,
+      path: `/playlist/history`,
       icon: (className) => <ClockRewind className={className} />,
-      current: router.pathname === `/playlist/history/${session?.id}`,
+      current: router.pathname === `/playlist/history`,
     },
     {
       name: "Your Videos",
@@ -79,7 +80,7 @@ export const Sidebar: FC<ISidebarProps> = ({
   return (
     <>
       <div
-        className={`bottom-0 top-[105px] border-0 border-r  hidden laptop:fixed laptop:z-40 laptop:flex laptop:flex-col ${closeSidebar ? "laptop:w-20" : "laptop:w-56"}`}
+        className={`bottom-0 top-[104px] border-0 border-r  hidden laptop:fixed laptop:z-40 laptop:flex laptop:flex-col ${closeSidebar ? "laptop:w-20" : "laptop:w-56"}`}
       >
         <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-primary-900 px-6 pb-4 ">
           <nav className="flex flex-1 flex-col pt-8">
@@ -110,7 +111,7 @@ export const Sidebar: FC<ISidebarProps> = ({
               </li>
               <li className="mt-auto">
                 <Link
-                  href="/settings"
+                  href="/watch/settings"
                   className="group -mx-2 flex items-center gap-x-3 rounded-md font-semibold text-sm p-2 leading-6 text-gray-700 hover:bg-primary-300 hover:text-primary-600"
                 >
                   <Settings
@@ -121,7 +122,7 @@ export const Sidebar: FC<ISidebarProps> = ({
                   <p className={`${closeSidebar ? "hidden" : ""}`}>Settings</p>
                 </Link>
                 <Link
-                  href="/help"
+                  href="/watch/help"
                   className="group -mx-2 flex items-center gap-x-3 rounded-md font-semibold text-sm p-2 leading-6 text-gray-700 hover:bg-primary-300 hover:text-primary-600"
                 >
                   <HelpCircle
