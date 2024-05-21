@@ -1,6 +1,5 @@
 import { FC, ReactNode } from "react";
 import { Navbar, Sidebar } from "@/features/watch";
-import { UiMenu } from "../Icons/UiMenu";
 
 interface IUiWatchPageLayoutProps {
   children: ReactNode;
