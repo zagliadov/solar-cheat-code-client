@@ -7,12 +7,12 @@ import { UiLogo } from "@/shared/ui/UiLogo/UiLogo";
 export function HomePage() {
   return (
     <>
-      <UiHeader className="border-slate-100 bg-primary-900 text-white">
+      <UiHeader className="border-primary-100">
         <UiLogo />
         <DesktopNavigation />
         <MobileMenu />
       </UiHeader>
-      <UiHomeLayout className="bg-primary-900"></UiHomeLayout>
+      <UiHomeLayout></UiHomeLayout>
     </>
   );
 }

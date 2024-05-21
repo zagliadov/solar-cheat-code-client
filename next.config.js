@@ -8,7 +8,8 @@ const nextConfig = {
     return [
       {
         source: '/api/:path*',
-        destination: 'https://solar-cheat-code-db724f9c2daf.herokuapp.com/:path*',
+        // destination: 'https://solar-cheat-code-db724f9c2daf.herokuapp.com/:path*',
+        destination: 'http://localhost:3000/:path*',
       },
     ];
   },

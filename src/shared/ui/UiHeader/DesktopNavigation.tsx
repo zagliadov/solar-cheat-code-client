@@ -8,7 +8,7 @@ import { useSessionQuery } from "@/entities/session/queries";
 export const DesktopNavigation: FC = () => {
   const { isSuccess } = useSessionQuery();
   return (
-    <div className="hidden laptop:flex items-center justify-between w-full">
+    <div className="hidden laptop:flex items-center justify-between w-full text-gray-700">
       <div className="flex w-2/5 justify-end gap-6">
         <UiLink href={ROUTES.HOME}>Home</UiLink>
         <UiLink href={ROUTES.PRICING}>Pricing</UiLink>

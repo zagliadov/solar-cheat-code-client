@@ -1,3 +1,4 @@
+"use client"
 import { useSubscriptionUpdate } from "@/features/subscription/model/use-subscription-update";
 import { ROUTES } from "@/shared/constants/routes";
 import { UiPageSpinner } from "@/shared/ui/UiPageSpinner/UiPageSpinner";
@@ -9,7 +10,7 @@ export function protectedWatchPage<P>(Component: (props: P) => ReactElement) {
     const router = useRouter();
     const { isActive, isPending, isReady } = useSubscriptionUpdate();
     if (!isReady) {
-      return <UiPageSpinner />;
+      <UiPageSpinner />
     }
 
     if (isPending) {
@@ -19,7 +20,7 @@ export function protectedWatchPage<P>(Component: (props: P) => ReactElement) {
     if (isActive || isReady) {
       return <Component {...props} />;
     } else {
-      router.replace(ROUTES.HOME);
+      router.replace(ROUTES.PRICING);
     }
   };
 }

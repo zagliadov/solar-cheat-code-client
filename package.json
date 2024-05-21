@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "api:download": "wget https://solar-cheat-code-db724f9c2daf.herokuapp.com/api-yaml -O ./src/shared/api/schema.yaml",
+    "api:download": "wget http://localhost:3000/api-yaml -O ./src/shared/api/schema.yaml",
     "api:generate": "orval"
   },
   "dependencies": {
@@ -29,6 +29,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "daisyui": "^4.11.1",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
     "orval": "^6.28.2",

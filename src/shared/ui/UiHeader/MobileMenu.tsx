@@ -27,7 +27,7 @@ export const MobileMenu: FC = () => {
     <div className="laptop:hidden">
       <UiButton
         variant="outlined"
-        className="focus:outline-none border-none"
+        className="focus:outline-none border-none hover:bg-white"
         onClick={() => setIsOpen(!isOpen)}
       >
         <UiMenu className="h-8 w-8 stroke-gray-400" aria-hidden="true" />
@@ -37,16 +37,16 @@ export const MobileMenu: FC = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className="fixed inset-0 bg-primary-900 z-50 flex flex-col items-center justify-center p-4"
+          className="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center p-4"
         >
           <UiButton
             variant="outlined"
-            className="absolute top-9 right-4 inline-flex items-center justify-center border-none focus:outline-none"
+            className="absolute hover:bg-white top-9 right-4 inline-flex items-center justify-center border-none focus:outline-none"
             onClick={() => setIsOpen(false)}
           >
             <UiClose className="h-8 w-8 stroke-gray-400" aria-hidden="true" />
           </UiButton>
-          <div className="flex flex-col items-center py-4 space-y-12 text-xl text-primary-200">
+          <div className="flex flex-col items-center py-4 space-y-12 text-xl text-gray-700">
             <UiLink href={ROUTES.HOME} onClick={() => setIsOpen(false)}>
               Home
             </UiLink>

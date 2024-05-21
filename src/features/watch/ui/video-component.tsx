@@ -8,7 +8,7 @@ export function UserImage({
   className?: string;
 }) {
   return (
-    <div className={`relative h-10 w-10 border border-transparent hover:border-primary-400 rounded-full cursor-pointer ${className}`}>
+    <div className={`relative h-10 w-10 border border-transparent hover:border-gray-400 rounded-full cursor-pointer ${className}`}>
       <Image
         src={image || "/profile.jpg"}
         alt=""

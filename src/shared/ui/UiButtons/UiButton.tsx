@@ -19,11 +19,11 @@ export const UiButton: FC<UiButtonProps> = ({
         "px-4 h-10 rounded-lg cursor-pointer flex gap-2 items-center transition-colors justify-center",
         {
           primary:
-            "text-white bg-primary-600 hover:bg-primary-700 disabled:opacity-50 shadow shadow-primary-500/30",
+            "text-white bg-cyan-600 hover:bg-cyan-700 disabled:opacity-50 shadow shadow-cyan-500/30",
           secondary:
-            "text-white bg-primary-500 hover:bg-primary-700 disabled:opacity-50 shadow shadow-primary-500/30",
+            "text-white bg-cyan-500 hover:bg-cyan-700 disabled:opacity-50 shadow shadow-cyan-500/30",
           outlined:
-            "border border-primary-600 hover:bg-primary-700 disabled:opacity-50",
+            "border border-cyan-600 hover:bg-cyan-700 disabled:opacity-50",
         }[variant],
       )}
     />

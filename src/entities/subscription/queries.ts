@@ -12,7 +12,6 @@ export function useSubscriptionQuery() {
     queryKey: subscriptionKey,
     queryFn: subscriptionControllerGetSubscription,
     retry: 0,
-    staleTime: 2 * 60 * 1000,
   });
 }
 

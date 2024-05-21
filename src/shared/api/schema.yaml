@@ -55,6 +55,17 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/GetSessionInfoDto'
+  /users/user:
+    get:
+      operationId: UsersController_getUser
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserDto'
   /account:
     get:
       operationId: AccountController_getAccount
@@ -185,6 +196,28 @@ components:
         - email
         - iat
         - exp
+    UserDto:
+      type: object
+      properties:
+        id:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        email:
+          type: string
+        image:
+          type: string
+        backgroundImage:
+          type: string
+      required:
+        - id
+        - firstName
+        - lastName
+        - email
+        - image
+        - backgroundImage
     AccountDto:
       type: object
       properties:
