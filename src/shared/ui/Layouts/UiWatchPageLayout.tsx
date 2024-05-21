@@ -14,7 +14,7 @@ export const UiWatchPageLayout: FC<IUiWatchPageLayoutProps> = ({
   return (
     <>
       <Navbar />
-      <Sidebar />
+      <Sidebar closeSidebar={closeSidebar} />
 
       <div className={`${closeSidebar ? "lg:pl-20" : "lg:pl-56"}`}>
         <main className="py-28">

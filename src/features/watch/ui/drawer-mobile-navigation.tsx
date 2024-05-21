@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { FC } from "react";
 import _ from "lodash";
-import { UiMenu } from "@/shared/ui/Icons/UiMenu";
 import { UiLink } from "@/shared/ui/UiLink/UiLink";
 import { UiLogo } from "@/shared/ui/UiLogo/UiLogo";
 import useSideBottomNavigation from "../model/use-side-bottom-navigation";
