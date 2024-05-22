@@ -1,0 +1,1 @@
+export { useGetRandomVideosQuery } from "./queries";
