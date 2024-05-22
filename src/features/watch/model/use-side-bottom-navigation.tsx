@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { HelpCircle, Settings } from "@/shared/ui/Icons/Icons";
+import { ROUTES } from "@/shared/constants/routes";
 
 interface INavigationItem {
   name: string;
@@ -14,15 +15,15 @@ const useSideBottomNavigation = (): INavigationItem[] => {
   const bottomNavigation: INavigationItem[] = [
     {
       name: "Settings",
-      path: `/settings`,
+      path: `${ROUTES.SETTINGS}`,
       icon: (className) => <Settings className={className} />,
-      current: router.pathname === `/settings`,
+      current: router.pathname === `${ROUTES.SETTINGS}`,
     },
     {
       name: "Help",
-      path: `/blog/help`,
+      path: `${ROUTES.HELP}`,
       icon: (className) => <HelpCircle className={className} />,
-      current: router.pathname === `/blog/help`,
+      current: router.pathname === `${ROUTES.HELP}`,
     },
   ];
 

@@ -6,6 +6,10 @@
  */
 import { createInstance } from "./api-instance";
 import type { BodyType } from "./api-instance";
+export interface CreateVideoDto {
+  [key: string]: any;
+}
+
 export interface PatchSubscriptionDto {
   /** The end date of the subscription (optional) */
   endDate: string;
@@ -193,6 +197,49 @@ export const subscriptionControllerCancelSubscription = (
   );
 };
 
+export const vimeoControllerCreateVideo = (
+  createVideoDto: BodyType<CreateVideoDto>,
+  options?: SecondParameter<typeof createInstance>,
+) => {
+  return createInstance<void>(
+    {
+      url: `/vimeo`,
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      data: createVideoDto,
+    },
+    options,
+  );
+};
+
+export const vimeoControllerDeleteVideo = (
+  id: string,
+  options?: SecondParameter<typeof createInstance>,
+) => {
+  return createInstance<void>(
+    { url: `/vimeo/${id}`, method: "DELETE" },
+    options,
+  );
+};
+
+export const vimeoControllerListAllVideos = (
+  options?: SecondParameter<typeof createInstance>,
+) => {
+  return createInstance<void>(
+    { url: `/vimeo/all-videos`, method: "GET" },
+    options,
+  );
+};
+
+export const vimeoControllerGetRandomVideos = (
+  options?: SecondParameter<typeof createInstance>,
+) => {
+  return createInstance<void>(
+    { url: `/vimeo/random-videos`, method: "GET" },
+    options,
+  );
+};
+
 export type AppControllerGetHelloResult = NonNullable<
   Awaited<ReturnType<typeof appControllerGetHello>>
 >;
@@ -225,4 +272,16 @@ export type SubscriptionControllerPatchSubscriptionResult = NonNullable<
 >;
 export type SubscriptionControllerCancelSubscriptionResult = NonNullable<
   Awaited<ReturnType<typeof subscriptionControllerCancelSubscription>>
+>;
+export type VimeoControllerCreateVideoResult = NonNullable<
+  Awaited<ReturnType<typeof vimeoControllerCreateVideo>>
+>;
+export type VimeoControllerDeleteVideoResult = NonNullable<
+  Awaited<ReturnType<typeof vimeoControllerDeleteVideo>>
+>;
+export type VimeoControllerListAllVideosResult = NonNullable<
+  Awaited<ReturnType<typeof vimeoControllerListAllVideos>>
+>;
+export type VimeoControllerGetRandomVideosResult = NonNullable<
+  Awaited<ReturnType<typeof vimeoControllerGetRandomVideos>>
 >;

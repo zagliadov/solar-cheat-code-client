@@ -9,6 +9,7 @@ import {
 } from "@/shared/ui/Icons/Icons";
 import { useSessionQuery } from "@/entities/session";
 import { useEffect } from "react";
+import { ROUTES } from "@/shared/constants/routes";
 
 interface INavigationItem {
   name: string;
@@ -24,39 +25,39 @@ const useSideNavigation = (): INavigationItem[] => {
   const navigationItems: INavigationItem[] = [
     {
       name: "Home",
-      path: `/watch`,
+      path: `${ROUTES.WATCH}`,
       icon: (className) => <Home className={className} />,
-      current: router.pathname === `/watch`,
+      current: router.pathname === `${ROUTES.WATCH}`,
     },
     {
       name: "Liked Videos",
-      path: `/playlist/liked-videos`,
+      path: `${ROUTES.LIKED_VIDEOS}`,
       icon: (className) => <ThumbsUp className={className} />,
-      current: router.pathname === `/playlist/liked-videos`,
+      current: router.pathname === `${ROUTES.LIKED_VIDEOS}`,
     },
     {
       name: "History",
-      path: `/playlist/history`,
+      path: `${ROUTES.HISTORY}`,
       icon: (className) => <ClockRewind className={className} />,
-      current: router.pathname === `/playlist/history`,
+      current: router.pathname === `${ROUTES.HISTORY}`,
     },
     {
       name: "Your Videos",
-      path: session?.id && `/${String(session?.id)}/profile-videos`,
+      path: session?.id && `/${String(session?.id)}${ROUTES.YOUR_VIDEOS}`,
       icon: (className) => <VideoRecorder className={className} />,
-      current: router.pathname === `/[userId]/profile-videos`,
+      current: router.pathname === `/[userId]${ROUTES.YOUR_VIDEOS}`,
     },
     {
       name: "Library",
-      path: `/${String(session?.id)}/profile-playlists`,
+      path: `/${String(session?.id)}${ROUTES.LIBRARY}`,
       icon: (className) => <Folder className={className} />,
-      current: router.pathname === `/[userId]/profile-playlists`,
+      current: router.pathname === `/[userId]${ROUTES.LIBRARY}`,
     },
     {
       name: "Following",
-      path: `/${session?.id}/profile-following`,
+      path: `/${session?.id}${ROUTES.FOLLOWING}`,
       icon: (className) => <UserCheck className={className} />,
-      current: router.pathname === `/[userId]/profile-following`,
+      current: router.pathname === `/[userId]${ROUTES.FOLLOWING}`,
     },
   ];
 
@@ -64,7 +65,7 @@ const useSideNavigation = (): INavigationItem[] => {
     navigationItems.forEach((nav) => {
       nav.current = nav.path === router.pathname;
     });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [router.pathname]);
 
   return navigationItems;

@@ -19,7 +19,7 @@ export const UiButton: FC<UiButtonProps> = ({
         "px-4 h-10 rounded-lg cursor-pointer flex gap-2 items-center transition-colors justify-center",
         {
           primary:
-            "text-white bg-cyan-600 hover:bg-cyan-700 disabled:opacity-50 shadow shadow-cyan-500/30",
+            "text-base-100 bg-primary hover:bg-accent disabled:opacity-50 shadow shadow-accent",
           secondary:
             "text-white bg-cyan-500 hover:bg-cyan-700 disabled:opacity-50 shadow shadow-cyan-500/30",
           outlined:

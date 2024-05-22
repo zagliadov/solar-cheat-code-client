@@ -8,6 +8,7 @@ import {
   Lock,
 } from "@/shared/ui/Icons/Icons";
 import { useUserQuery } from "@/entities/users";
+import { ROUTES } from "@/shared/constants/routes";
 
 interface INavigationItem {
   icon: (className: string) => JSX.Element;
@@ -21,45 +22,45 @@ const useUserProfileNavigation = (): INavigationItem[] => {
 
   const userProfileNavigation: INavigationItem[] = [
     {
-      icon: (className) => <User className={className} />,
       name: "View Profile",
-      path: `/${user?.id}/profile-videos`,
+      path: `/${user?.id}${ROUTES.YOUR_VIDEOS}`,
+      icon: (className) => <User className={className} />,
       lineAbove: false,
     },
     {
-      icon: (className) => <Brush className={className} />,
       name: "Creator Studio",
-      path: `/dashboard`,
+      path: `${ROUTES.CREATOR_STUDIO}`,
+      icon: (className) => <Brush className={className} />,
       lineAbove: false,
     },
     {
-      icon: (className) => <HelpCircle className={className} />,
       name: "Help",
-      path: `/blog/help`,
+      path: `${ROUTES.HELP}`,
+      icon: (className) => <HelpCircle className={className} />,
       lineAbove: true,
     },
     {
-      icon: (className) => <Settings className={className} />,
       name: "Settings",
-      path: `/settings`,
+      path: `${ROUTES.SETTINGS}`,
+      icon: (className) => <Settings className={className} />,
       lineAbove: false,
     },
     {
-      icon: (className) => <MessagePlusSquare className={className} />,
       name: "Feedback",
       path: `#`,
+      icon: (className) => <MessagePlusSquare className={className} />,
       lineAbove: false,
     },
     {
-      icon: (className) => <File className={className} />,
       name: "Terms of Service",
-      path: `/blog/tos`,
+      path: `${ROUTES.TOS}`,
+      icon: (className) => <File className={className} />,
       lineAbove: true,
     },
     {
-      icon: (className) => <Lock className={className} />,
       name: "Privacy",
-      path: `/blog/privacy`,
+      path: `${ROUTES.PRIVACY}`,
+      icon: (className) => <Lock className={className} />,
       lineAbove: false,
     },
   ];

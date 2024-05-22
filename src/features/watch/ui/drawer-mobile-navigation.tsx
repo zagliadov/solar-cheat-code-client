@@ -36,7 +36,7 @@ export const DrawerMobileNavigation: FC<IDrawerMobileNavigationProps> = ({
             </div>
           </label>
         </div>
-        <div className="drawer-side">
+        <div className="drawer-side h-[calc(100vh-66px)]">
           <label
             htmlFor="my-drawer"
             aria-label="close sidebar"
@@ -59,13 +59,13 @@ export const DrawerMobileNavigation: FC<IDrawerMobileNavigationProps> = ({
                     <li key={item.name}>
                       <Link
                         href={String(item.path)}
-                        className={`${item.current ? "bg-gray-100 text-teal-600" : "text-gray-700 hover:bg-gray-100 hover:text-teal-600"}
+                        className={`${item.current ? "bg-base-100 text-primary" : "text-secondary hover:bg-base-100 hover:text-primary"}
                           group flex items-center gap-x-3 rounded-md p-2 text-sm font-semibold leading-6`}
                       >
                         {item.current
-                          ? item.icon("h-5 w-5 shrink-0 stroke-teal-600")
+                          ? item.icon("h-5 w-5 shrink-0 stroke-primary")
                           : item.icon(
-                              "h-5 w-5 shrink-0 stroke-gray-500 group-hover:stroke-teal-600",
+                              "h-5 w-5 shrink-0 stroke-secondary group-hover:stroke-primary",
                             )}
                         <p>{item.name}</p>
                       </Link>
@@ -74,19 +74,19 @@ export const DrawerMobileNavigation: FC<IDrawerMobileNavigationProps> = ({
                 })}
               </ul>
             </li>
-            <div className="mt-auto border-b">
+            <div className="mt-auto border-b border-base-300">
               {_.map(bottomNavigation, (bottomNavItem) => {
                 return (
                   <li key={`${bottomNavItem.name}`}>
                     <Link
                       href={String(bottomNavItem.path)}
-                      className={`${bottomNavItem.current ? "bg-gray-100 text-teal-600" : "text-gray-700 hover:bg-gray-100 hover:text-teal-600"}
+                      className={`${bottomNavItem.current ? "bg-base-100 text-primary" : "text-secondary hover:bg-base-100 hover:text-primary"}
                       group flex items-center gap-x-3 rounded-md p-2 text-sm font-semibold leading-6`}
                     >
                       {bottomNavItem.current
-                        ? bottomNavItem.icon("h-5 w-5 shrink-0 stroke-teal-600")
+                        ? bottomNavItem.icon("h-5 w-5 shrink-0 stroke-primary")
                         : bottomNavItem.icon(
-                            "h-5 w-5 shrink-0 stroke-gray-500 group-hover:stroke-teal-600",
+                            "h-5 w-5 shrink-0 stroke-secondary group-hover:stroke-primary",
                           )}
                       <p>{bottomNavItem.name}</p>
                     </Link>
